@@ -1,13 +1,14 @@
+
 @extends('dashboard.master')
 
 @section('content')
-
     <div class="container">
 
     <h4>Publicaciones</h4>
 
     <a href="{{url('dashboard/post/create')}}" class="btn btn-primary">Crear nuevo post</a>
     <br><br>
+
     <table class="table">
         <thead>
         <tr>
@@ -42,7 +43,8 @@
         </tbody>
     </table>
 
-    {{-- No me quiere tomar la paginacion (Aún con organizando el index del postController) --}}
     {{-- {!!$post->links()!!} --}}
+
 </div>
 @endsection
+

@@ -9,7 +9,6 @@
     <title>CRUD - Publicaciones</title>
 </head>
 <body>
-    
 
     @include('dashboard.partials.navbar')
 

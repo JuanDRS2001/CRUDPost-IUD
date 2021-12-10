@@ -30,8 +30,10 @@ class PostController extends Controller
     public function create()
     {
         //
-        $categories = Category::pluck('id', 'category');
-        return view('dashboard.post.create', ['post' => new Post(), 'categories' => $categories]);
+
+        $categories = Category::pluck('id','category');
+        return view('dashboard.post.create', ['post' => new Post(),'categories' => $categories]);
+
     }
 
     /**
@@ -69,7 +71,8 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         //
-        return view('dashboard.post.edit', ['post' => $post]);
+        $categories = Category::pluck('id','category');
+        return view('dashboard.post.edit', ['post' => $post ,'categories' => $categories]);
     }
 
     /**
@@ -95,9 +98,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
-        // $post -> delete();
-        // return back() -> with('status','Publicación eliminada exitosamente');
         Post::destroy($id);
-        return redirect('dashboard/post');
+        return back() -> with('status','Publicación eliminada exitosamente');
     }
 }
